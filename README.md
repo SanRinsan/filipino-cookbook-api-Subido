@@ -137,14 +137,12 @@ Description: The welcome page
     "message":"Welcome to the Secured Filipino Cookbook API",
     "note":"Use a valid Bearer token to access /api endpoints."
 }
-
+```
 <img width="771" height="187" alt="Screenshot 2026-07-27 204450" src="https://github.com/user-attachments/assets/b0e99b9f-acbc-488e-9cad-e1a34334939b" />
 
-```
+-------
 
----
-
----
+-------
 
 ## Get All Foods
 
