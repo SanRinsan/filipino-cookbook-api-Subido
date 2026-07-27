@@ -87,7 +87,7 @@ $db = new PDO(
 
 7. (important) only use the built in php server, not apache
 
-   ```bash
+```bash
 php -S localhost:8000 -t public
 ```
 
