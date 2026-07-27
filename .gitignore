@@ -1,0 +1,30 @@
+# Create .gitignore file
+echo "# PHP" > .gitignore
+echo "*.log" >> .gitignore
+echo "*.cache" >> .gitignore
+echo ".phpunit.result.cache" >> .gitignore
+echo "" >> .gitignore
+echo "# Composer" >> .gitignore
+echo "/vendor/" >> .gitignore
+echo "composer.lock" >> .gitignore
+echo "" >> .gitignore
+echo "# Environment" >> .gitignore
+echo ".env" >> .gitignore
+echo ".env.*" >> .gitignore
+echo "!.env.example" >> .gitignore
+echo "" >> .gitignore
+echo "# IDE" >> .gitignore
+echo ".vscode/" >> .gitignore
+echo ".idea/" >> .gitignore
+echo "*.iml" >> .gitignore
+echo "" >> .gitignore
+echo "# OS" >> .gitignore
+echo ".DS_Store" >> .gitignore
+echo "Thumbs.db" >> .gitignore
+echo "" >> .gitignore
+echo "# Uploads" >> .gitignore
+echo "/public/uploads/" >> .gitignore
+echo "/storage/" >> .gitignore
+echo "" >> .gitignore
+echo "# Session" >> .gitignore
+echo "/tmp/" >> .gitignore
