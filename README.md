@@ -5,6 +5,7 @@ A secure RESTful API built with **PHP**, **Slim Framework 4**, and **MySQL** for
 The API provides endpoints to retrieve, search, create, update, and delete Filipino food recipes along with their categories, origins, and ingredients.
 
 ---
+---
 
 ## Features
 
@@ -24,6 +25,7 @@ The API provides endpoints to retrieve, search, create, update, and delete Filip
 - Error Handling
 
 ---
+---
 
 # Technology Stack
 
@@ -34,6 +36,8 @@ The API provides endpoints to retrieve, search, create, update, and delete Filip
 - PDO
 
 ---
+---
+
 
 # Project Structure
 
@@ -50,6 +54,8 @@ project/
 └── README.md
 ```
 
+
+---
 ---
 
 # Installation
@@ -97,9 +103,10 @@ php -S localhost:8000 -t public
 http://localhost:8000//
 ```
 
----
 
 ---
+---
+
 
 # Authentication
 
@@ -114,116 +121,113 @@ If authentication fails:
 }
 ```
 
+
 ---
+---
+
+
 
 # API Endpoints
 
----
-
-## Welcome
-
-### GET /
-
-```
-http://localhost:8000//
-```
+## Welcome page
 
 Description: The welcome page 
 
-### Response
-
-```json
-{
-    "message":"Welcome to the Secured Filipino Cookbook API",
-    "note":"Use a valid Bearer token to access /api endpoints."
-}
 ```
+GET http://localhost:8000//
+```
+
 <img width="771" height="187" alt="Screenshot 2026-07-27 204450" src="https://github.com/user-attachments/assets/b0e99b9f-acbc-488e-9cad-e1a34334939b" />
 
+
+
 -------
 
 -------
+
+
+
 
 ## Get All Foods
-
-### GET /api/foods
+Description: Fetch all the foods in the database
 
 ```
-http://localhost:8000//api/foods
-```
-
-Description: Returns every food with category, origin, ingredients and instructions.
-
-### Response
-
-```json
-{
-  "status":"success",
-  "count": 15,
-  "data":[]
-}
+GET http://localhost:8000//api/foods
 ```
 
 <img width="766" height="609" alt="image" src="https://github.com/user-attachments/assets/1789e10c-8be1-4be6-bfae-60cafd99762a" />
 
 
-```
-
 ---
+---
+
+
 
 ## Get Food by ID
 
-### GET /api/foods/{id}
+Description: Only Returns a food based on its id
 
-Example
+Example:
 
 ```
-GET /api/foods/1
+GET http://localhost:8000//api/foods/2 
 ```
-
-Returns a single food.
 
 <img width="767" height="615" alt="image" src="https://github.com/user-attachments/assets/e259bb6c-76d2-4745-99c0-989a893127bf" />
 
 
-
+---
 ---
 
----
+
 
 ## Search Food by Name
 
-### GET /api/foods/search/{name}
+Description: Search food by its name (CASE SENSITIVE) 
 
-Example
+Example:
 
 ```
-GET /api/foods/search/adobo
+GET http://localhost:8000//api/foods/search/halo-halo
 ```
 
-Performs a partial search.
+<img width="773" height="609" alt="image" src="https://github.com/user-attachments/assets/8e752de5-9b91-41cf-860b-413cb5d1111c" />
+
+
 
 ---
+---
 
-## Search Foods by Origin
 
-### GET /api/foods/origin/{origin}
 
-Example
+## Get all Origin 
+
+Description: fetches all location (CASE SENSITIVE) 
+
+example: 
 
 ```
-GET /api/foods/origin/Ilocos
+GET http://localhost:8000//api/origins
 ```
 
-Case-insensitive partial search.
+<img width="770" height="615" alt="image" src="https://github.com/user-attachments/assets/8dc9c89e-06da-459c-bf4a-50e37c7154fa" />
+
 
 ---
+---
+
 
 ## Create Food
 
-### POST /api/foods
+Description: Adds a food to the database
+
+```
+POST http://localhost:8000//api/foods
+```
 
 ### Request Body
+
+Example:
 
 ```json
 {
@@ -239,15 +243,10 @@ Case-insensitive partial search.
 }
 ```
 
-### Success Response
+<img width="770" height="232" alt="image" src="https://github.com/user-attachments/assets/b1de3e1e-96f9-49ba-8657-8a215a79f82d" />
 
-```json
-{
-    "status":"success",
-    "message":"Food added successfully."
-}
-```
 
+---
 ---
 
 ## Update Food
@@ -260,82 +259,83 @@ Updates an existing food.
 
 ```json
 {
-    "food_name":"Chicken Adobo",
-    "category_id":1,
-    "origin_id":2,
-    "instructions":"Updated instructions...",
-    "ingredient_ids":[
-        1,
-        2,
-        3
-    ]
+"food_name": "Dinengdeng_test_UPDATED",
+"category_id": 3,
+"origin_id": 4,
+"instructions": "Boil vegetables with bagoong-based broth and add grilled fish before serving.",
+"ingredient_ids": [10, 15, 22]
 }
 ```
 
+<img width="773" height="624" alt="image" src="https://github.com/user-attachments/assets/77350e74-8c59-4650-a252-1d7e2273f78b" />
+
+
+
+
 ---
+---
+
+
 
 ## Delete Food
 
-### DELETE /api/foods/{id}
+Description: Delete an existing food
 
-Example
+Example:
 
 ```
-DELETE /api/foods/1
+DELETE http://localhost:8000//api/foods/16
 ```
 
-Response
+<img width="772" height="221" alt="image" src="https://github.com/user-attachments/assets/433e1583-70f9-4076-8a05-32f7897e2659" />
 
-```json
-{
-    "status":"success",
-    "message":"Food deleted successfully."
-}
-```
 
 ---
-
-# Categories
-
 ---
+
 
 ## Get All Categories
 
-### GET /api/categories
-
-Response
-
-```json
-{
-    "status":"success",
-    "count":5,
-    "data":[]
-}
+Description: fetches all categories in the database 
+```
+GET http://localhost:8000//api/categories
 ```
 
+<img width="775" height="619" alt="image" src="https://github.com/user-attachments/assets/6737aed9-e751-420d-8b0d-200056756c1d" />
+
+
+
+---
 ---
 
-# Ingredients
-
----
 
 ## Get All Ingredients
 
-### GET /api/ingredients
+Desciption: Returns every ingredient.
 
-Returns every ingredient.
+```
+GET http://localhost:8000//api/ingredients
+```
+
+<img width="775" height="611" alt="image" src="https://github.com/user-attachments/assets/ce4d68e9-25ff-471b-93de-f512a1c70edb" />
+
+
+
 
 ---
-
-# Origins
-
 ---
 
-## Get All Origins
+## Search foods by origins
 
-### GET /api/origins
+Description: Returns a food based on searched origin.
 
-Returns every food origin.
+```
+GET http://localhost:8000//api/foods/origin/bacolod
+```
+
+<img width="772" height="612" alt="image" src="https://github.com/user-attachments/assets/a12b98be-6db9-4915-989a-3ce5ec5a49ab" />
+
+
 
 ---
 
@@ -352,36 +352,6 @@ Returns every food origin.
 |500|Internal Server Error|
 
 ---
-
-# Example Request
-
-```http
-GET /api/foods HTTP/1.1
-Host: localhost:8080
-Authorization: Bearer dmmmsu-cookbook-token-2026
-Accept: application/json
-```
-
----
-
-# Sample Food Object
-
-```json
-{
-    "food_id":1,
-    "food_name":"Chicken Adobo",
-    "category_name":"Main Course",
-    "origin_name":"Luzon",
-    "instructions":"Cook the chicken...",
-    "ingredients":[
-        "Chicken",
-        "Garlic",
-        "Soy Sauce",
-        "Vinegar"
-    ]
-}
-```
-
 ---
 
 # Database Tables
