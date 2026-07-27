@@ -83,51 +83,27 @@ $db = new PDO(
 );
 ```
 
-6. Start MySQL only, on XAMPP
+6.  On XAMPP, start MySQL only.
 
-7. (important) only use the built in php server, not apache
+7. (important) activate the built in php server on visual studio terminal.
 
 ```bash
 php -S localhost:8000 -t public
 ```
 
-9. Access the API at:
+9. Access the API at thunderclient:
 
 ```
 http://localhost:8000//
 ```
 
-Update the credentials if necessary.
-
 ---
-
-## 5. Run the Server
-
-```bash
-php -S localhost:8080 -t public
-```
-
-API Base URL
-
-```
-http://localhost:8080
-```
 
 ---
 
 # Authentication
 
 All `/api` routes require a Bearer Token.
-
-```
-Authorization: Bearer dmmmsu-cookbook-token-2026
-```
-
-Example
-
-```
-Authorization: Bearer dmmmsu-cookbook-token-2026
-```
 
 If authentication fails:
 
@@ -148,7 +124,11 @@ If authentication fails:
 
 ### GET /
 
-Returns API information.
+```
+http://localhost:8000//
+```
+
+Description: The welcome page 
 
 ### Response
 
@@ -157,11 +137,12 @@ Returns API information.
     "message":"Welcome to the Secured Filipino Cookbook API",
     "note":"Use a valid Bearer token to access /api endpoints."
 }
+
+<img width="771" height="187" alt="Screenshot 2026-07-27 204450" src="https://github.com/user-attachments/assets/b0e99b9f-acbc-488e-9cad-e1a34334939b" />
+
 ```
 
 ---
-
-# Foods
 
 ---
 
@@ -169,16 +150,25 @@ Returns API information.
 
 ### GET /api/foods
 
-Returns every food with category, origin, ingredients and instructions.
+```
+http://localhost:8000//api/foods
+```
+
+Description: Returns every food with category, origin, ingredients and instructions.
 
 ### Response
 
 ```json
 {
   "status":"success",
-  "count":2,
+  "count": 15,
   "data":[]
 }
+```
+
+<img width="766" height="609" alt="image" src="https://github.com/user-attachments/assets/1789e10c-8be1-4be6-bfae-60cafd99762a" />
+
+
 ```
 
 ---
@@ -194,6 +184,12 @@ GET /api/foods/1
 ```
 
 Returns a single food.
+
+<img width="767" height="615" alt="image" src="https://github.com/user-attachments/assets/e259bb6c-76d2-4745-99c0-989a893127bf" />
+
+
+
+---
 
 ---
 
