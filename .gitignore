@@ -1,30 +1,73 @@
-# Create .gitignore file
-echo "# PHP" > .gitignore
-echo "*.log" >> .gitignore
-echo "*.cache" >> .gitignore
-echo ".phpunit.result.cache" >> .gitignore
-echo "" >> .gitignore
-echo "# Composer" >> .gitignore
-echo "/vendor/" >> .gitignore
-echo "composer.lock" >> .gitignore
-echo "" >> .gitignore
-echo "# Environment" >> .gitignore
-echo ".env" >> .gitignore
-echo ".env.*" >> .gitignore
-echo "!.env.example" >> .gitignore
-echo "" >> .gitignore
-echo "# IDE" >> .gitignore
-echo ".vscode/" >> .gitignore
-echo ".idea/" >> .gitignore
-echo "*.iml" >> .gitignore
-echo "" >> .gitignore
-echo "# OS" >> .gitignore
-echo ".DS_Store" >> .gitignore
-echo "Thumbs.db" >> .gitignore
-echo "" >> .gitignore
-echo "# Uploads" >> .gitignore
-echo "/public/uploads/" >> .gitignore
-echo "/storage/" >> .gitignore
-echo "" >> .gitignore
-echo "# Session" >> .gitignore
-echo "/tmp/" >> .gitignore
+# PHP
+*.log
+*.cache
+*.phpunit.result.cache
+*.lock
+
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# Environment
+.env
+.env.*
+!.env.example
+!.env.testing
+
+# IDE / Editor
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.DS_Store
+.vscode/settings.json
+.vscode/launch.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Uploads & Storage
+/public/uploads/
+/storage/
+/tmp/
+/sessions/
+
+# Testing
+/coverage/
+/phpunit/
+.phpunit.result.cache
+test-reports/
+
+# Logs
+/logs/
+*.log
+
+# Cache
+/cache/
+*.cache
+
+# Git
+.gitignore
+.gitattributes
+
+# Project specific
+/public/error_log
+php_error_log
+nginx_error_log
+
+# Compiled files
+*.class
+*.o
+*.so
+*.dll
+*.exe
+
+# Package managers
+package-lock.json
+yarn.lock
+node_modules/
